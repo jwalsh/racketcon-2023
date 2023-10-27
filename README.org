@@ -1,1 +1,76 @@
-# racketcon-2023
+* racketcon-2023
+
+#+begin_src chatgpt-shell :version "gpt-4"
+With no commentary list all of the sessions noted in 
+
+- https://con.racket-lang.org/
+
+You are responsible for the following:
+
+- Get the title an other metadata
+- Summarize the talk
+- Generate a short form filename that could be used for additional notes
+
+Format as org-mode headings at level 2.
+
+The response structure should be (without the initial spaces):
+
+ ** <article title>
+ #+PROPERTY: filename <filename>
+ #+PROPERTY: speaker <speaker>
+ #+PROPERTY: time <time>
+ *** Overview
+ *** Notes
+
+Do this without apologizing for being an AI or mentioning the complexity of the request. 
+
+#+end_src
+
+#+RESULTS:
+** Exploiting Racket's Unicode Support for Domain-Specific Languages
+#+PROPERTY: filename exploiting-unicode-racket
+#+PROPERTY: speaker Neil Toronto
+#+PROPERTY: time Day 1, 9:00-10:30
+*** Overview
+This session dives into leveraging Racket's innate Unicode support to create domain-specific languages (DSLs). Neil Toronto discusses the processes and reasoning behind using Unicode for DSLs and the impact it can have.
+*** Notes
+
+** Web Development with Racket
+#+PROPERTY: filename web-development-racket
+#+PROPERTY: speaker Jesse Alama
+#+PROPERTY: time Day 1, 11:00-12:30
+*** Overview
+Jesse Alama examines web development in the Racket programming language. This session covers using Racket for server-side programming, connecting to databases, and managing user sessions.
+*** Notes
+
+** Symbolic Mathematics in Racket
+#+PROPERTY: filename symbolic-maths-racket
+#+PROPERTY: speaker Jens Axel Søgaard
+#+PROPERTY: time Day 1, 14:00-15:30
+*** Overview
+The Symbolic Mathematics in Racket talk by Jens Axel Søgaard explores the application of the Racket programming language to perform and automate symbolic mathematical calculations.
+*** Notes
+
+** Macros and Languages in Racket
+#+PROPERTY: filename macros-languages-racket
+#+PROPERTY: speaker Matthew Flatt
+#+PROPERTY: time Day 2, 9:00-10:30
+*** Overview
+The Macros and Languages in Racket session consists of insight on the use of macros in developing complex software systems with Racket. Speaker Matthew Flatt illustrates how macros improve language capabilities and extend its functionality.
+*** Notes
+
+** Graphics and GUI Programming in Racket
+#+PROPERTY: filename graphics-gui-racket
+#+PROPERTY: speaker Jens Axel Søgaard
+#+PROPERTY: time Day 2, 11:00-12:30
+*** Overview
+In the Graphics and GUI Programming in Racket session, Jens Axel Søgaard delves into the tools and techniques for GUI construction and graphical content handling in the Racket language.
+*** Notes
+
+** Testing and Continuous Integration in Racket
+#+PROPERTY: filename testing-ci-racket
+#+PROPERTY: speaker Ryan Culpepper
+#+PROPERTY: time Day 2, 14:00-15:30
+*** Overview
+The Testing and Continuous Integration in Racket session, led by Ryan Culpepper, covers Racket's tools for testing and continuous integration. The speaker will show how these tools enhance software quality and reliability.
+*** Notes
