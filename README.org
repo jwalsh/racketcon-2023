@@ -27,6 +27,73 @@ Do this without apologizing for being an AI or mentioning the complexity of the 
 #+end_src
 
 #+RESULTS:
+
+** Keynote: From Here To Lambda And Back Again
+
+
+Douglas Crockford gave a talk on actors and actor systems, discussing their benefits and challenges. He began by defining what actors are and how they differ from other programming constructs like functions or classes. Actors are independent entities that can run concurrently with other actors, communicating with each other through messages.
+
+One of the main benefits of actors is their ability to handle failure gracefully. If an actor fails, its subordinates will go down as well, but the supervisor can restart it again. This makes actors more robust than traditional programming constructs that might crash or become unresponsive if they encounter an error.
+
+Douglas also discussed the challenges of working with actors, such as handling network partitioning and dealing with the potential for proliferation of actors leading to confusion and difficulty in understanding their behavior. He proposed a solution to this problem by creating a bridge actor or translator actor that could sit between conflicting departments and adapt their interfaces to reconcile any issues.
+
+Regarding performance, Douglas highlighted the importance of reducing wait times in distributed systems, as most of the time spent in these systems is waiting for responses rather than executing tasks. He believes that actors are effective at handling latency by distributing work requests simultaneously and running on different machines, allowing results to come back faster.
+
+Finally, Douglas discussed his inspiration from Erlang for failure handling, but noted that Erlang is not an actor system as its process IDs are guessable. He has a lot of respect for Erlang but believes it differs from true actor systems in this regard
+
+** Introducing Rackith
+
+Rackith is a language-oriented programming language based on Racket. Use Rackith to define many languages with one syntax object. Discussion covers project design and implications for the personal computer.
+
+Bio: Sage is a programmer by hobby and trade. If you bought a car, educated kids, or avoided a lawsuit, then you may have used his code.
+
+** #lang Karp: Formulating and Random Testing NP Reductions
+
+Reduction, a pervasive idea in computer science, is often taught in algorithm courses with NP problems. The traditional pen-and-paper approach is notoriously ineffective both for students and instructors: Subtle mistakes in reductions are often hard to detect by merely inspecting the purported solutions. Constructing a counterexample by hand to expose the mistake is even more onerous. Based on the observation that reductions are actually programs, we designed #lang Karp, a DSL for formulating and random testing NP reductions. In this talk, I’m going to discuss the implementation of Karp on top of Racket and solver-aided host language Rosette.
+
+** Mutate: Inject Bugs into Your Programs!
+
+In this talk I’ll introduce mutate, a library for mutating programs, i.e. injecting possible bugs by making small syntactic changes to the program syntax. I’ll talk about what mutation is, why one might want it, and demo how to use the library.
+Bio: Lukas is a PL PhD student at Northwestern. He’s graduating this winter and is on the job market.
+
+** Incrementally Developing Support for Racket->Wasm Compilation
+
+Wasm is an attractive compiler target for a variety of reasons: it has support in all major browsers, its isolation guarantees are beneficial for security reasons, and it has potential as a general-purpose platform-independent execution environment. However, adding Wasm support to Racket has proven a challenging problem due to differences in the execution model each language uses at runtime. Chez Scheme, the backend of Racket CS, utilizes code generation conventions which are difficult to adapt to Wasm. This talk will present an alternative approach to Racket-to-Wasm compilation which is compatible with Racket CS. The approach is accomplished by using an existing bytecode format and interpreter which are already supported under Chez Scheme, and performing an ahead-of-time translation of portions of bytecode programs into Wasm. This sets up an incremental approach to the development of a Racket-to-Wasm compilation system.
+Bio: Adam Perlin is a software engineer in Microsoft Azure. He completed BS and MS degrees in Computer Science at Cal Poly, San Luis Obispo with a Master’s thesis focused on Racket to Wasm translation.
+
+** Teaching and Learning Compilers Incrementally
+This talk is an introduction to the joys of teaching and learning about compilers using the incremental approach. The talk provides a sneak-preview of a compiler course based on the new textbooks from MIT Press, Essentials of Compilation: An Incremental Approach in Racket/Python. The course takes students on a journey through constructing their own compiler for a small but powerful language. The standard approach to describing and teaching compilers is to proceed one pass at a time, from the front to the back of the compiler. Unfortunately, that approach obfuscates how language features motivate design choices in a compiler. In this course we instead take an incremental approach in which we build a complete compiler every two weeks, starting with a small input language that includes only arithmetic and variables. We add new language features in subsequent iterations, extending the compiler as necessary. Students get immediate positive feedback as they see their compiler passing test cases and then learn important lessons regarding software engineering as they grow and refactor their compiler throughout the semester.
+Bio: Jeremy Siek is a Professor at Indiana University. Jeremy’s interests include programming language design, type systems, mechanized theorem proving, and compilers.
+
+** Malt: A Deep Learning Framework for Racket
+We discuss the design of a deep learning toolkit, Malt, that has been built for Racket. Originally designed to support the pedagogy of The Little Learner—A Straight Line to Deep Learning, it is used to build deep neural networks with a minimum of fuss using tools like higher-order automatic differentiation and rank polymorphism. The natural, functional style of AI programming that Malt enables can be extended to much larger, practical applications. We present a roadmap for how we hope to achieve this so that it can become a stepping stone to allow Lisp/Scheme/Racket to reclaim the crown of being the language for Artificial Intelligence (perhaps!).
+
+** Data Integrity via Smart Structs
+Structs in Racket should be more than dumb data storage. They should be data models in the sense of MVC programming; they should ensure that their contents are valid according to your project’s business rules and they should make it easy to do common operations such as storing to a database or generating a struct from data of another type such as a database row or user input field.
+The struct-plus-plus module makes this easy. It allows you to place contracts on individual fields, specify business rules that ensure integrity between fields, easily create converter functions, and much more, with all of these things being part of the struct definition and therefore in one easily-referenced location. Come see how it all works and how you can simplify your code with struct-plus-plus!
+Bio: David Storrs has been a professional programmer since the mid 90s, working in a wide array of fields. He has started and operated multiple companies in the last 15 years and published about four million words of SF&F in the last 10. He is currently co-founder at AllPossible Solutions, a software consulting company focused in bioinformatics. He discovered Racket back when it was called PLT and
+
+** keyring: Uniformly Access Secrets
+Hardcoding passwords in your programs is bad. Using secure password stores are good. Keyring is a Racket library that allows programs to access different password stores using a simple interface.
+
+** Redeeming Open Source with Attribution Based Economics
+Attribution Based Economics (ABE) is a new paradigm for economics that revises several foundational assumptions governing today’s systems, including the nature of economic value and the origin of money. In this new paradigm, open source software becomes economically viable and, indeed, even financially favored over proprietary models. This talk describes our experiences implementing an early prototype for the Qi project, and also how Racket will be an essential part of the solution as ABE scales past the pilot stage.
+Bio: Growing up in various parts of India, Sid had the opportunity to see and live amidst large scale poverty (from which he was fortunately spared direct experience) during his childhood. Decades later, he arrived in Silicon Valley, like so many other wide-eyed travelers from around the world, hoping to make a difference. But the solutions and attitude he saw in startups didn’t add up in his mind to true and lasting solutions that could solve all of the problems he’d witnessed from the brink, nor did they even add up to the effective innovation that startups are supposed to be good at. In the years since, Sid spent a lot of time understanding the essence of economic systems, and developed Attribution Based Economics as an alternative to capitalism and other established economic systems, one that promises to retain all of their best qualities and none of their drawbacks. Together, Sid and many generous and talented individuals in the Racket and other open source communities have begun to put into operation an early prototype of ABE. The Qi programming language is part of the ABE pilot, and the numerous contributors to this language are already getting paid from money that’s been raised! He hopes you will join him in carrying the work on ABE forward, so that with your help, our economic processes can be based on the wholesome and organic human connections that are the soil of great possibility.
+
+** Crafting Interpreters in Typed Racket
+My first Typed Racket program was an interpreter for the Lox language from Bob Nystrom’s book Crafting Interpreters. In this talk, I’ll discuss the design decisions I made when translating from Nystrom’s Java, as well as the fun and frustrating aspects of Typed Racket I discovered in the process. I’ll also give a retrospective on learning how to adapt a traditional compiler to Racket’s language-oriented paradigm.
+Bio: Micah is a student at Grinnell College with interests in compilers, functional programming, writing and education.
+
+** Esterel in Racket
+Concurrency and thread preemption are tools that can make programs more modular. Unfortunately, in conventional programming models, combining state and concurrency (to say nothing of preemption!) makes programs extremely hard to get right.
+Esterel offers a different programming model that is designed such that concurrency, state change, and thread preemption can all be used harmoniously. It dates to the 1980s and is the brainchild of Gérard Berry.
+Unfortunately, the standard implementation technique for Esterel (as embodied in Manuel Serrano’s JS+Esterel integration, HipHop) requires a form of staging that leaks out and affects the programming model. I’ve been working on a different implementation technique that uses continuations as to try to get a more seamless integration with a conventional programming language (Racket, naturally).
+In the talk, I’ll try to use examples to make some sense out of what’s written in the second paragraph and, more generally, give a demo of this new implementation. If we have time, I’ll also try to explain how the implementation actually works.
+
+** Rhombus: Status Update
+
+* Other Talks 
+
 ** Exploiting Racket's Unicode Support for Domain-Specific Languages
 #+PROPERTY: filename exploiting-unicode-racket
 #+PROPERTY: speaker Neil Toronto
